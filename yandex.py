@@ -1,6 +1,3 @@
-import os
-import requests
-
 from yandex_tracker_client import TrackerClient
 
 file = open("id.txt")
@@ -11,6 +8,7 @@ client = TrackerClient(token=token, cloud_org_id=org_id)
 
 issues = client.issues.get_all()
 last_issue = str(issues[0])
+
 try:
     client.issues.create(queue='TEAMCITYBUILDFA', summary=f"Issue № {last_issue[len(last_issue) - 2]}",
                          type={'name': 'Task'}, assignee='nktfmnko')
