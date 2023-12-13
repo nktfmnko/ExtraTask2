@@ -1,3 +1,6 @@
+import os
+import requests
+
 from yandex_tracker_client import TrackerClient
 
 file = open("id.txt")
